@@ -5,6 +5,25 @@ window.addEventListener('load', async () => {
 	const frame = document.getElementById('frame');
 	const monitor = document.querySelector('.c-monitor');
 
+	window.addEventListener('message', e => {
+		if (e.data.type == 'openframe') {
+			wrapper.style.display = 'block';
+		}
+	});
+
+  document.addEventListener('keyup', e => {
+    if (e.key == 'Escape') {
+      wrapper.style.display = 'none';
+    }
+  });
+
+	exit.addEventListener('click', () => {
+		if (frame.src) {
+			monitor.style.display = 'flex';
+			frame.src = 'about:blank';
+		}
+	});
+
 	const apps = await (await fetch('./apps.json')).json();
 	for (const id in apps) {
 		const app = apps[id];
@@ -25,23 +44,4 @@ window.addEventListener('load', async () => {
 		appBtn.appendChild(appImg);
 		appsList.appendChild(appBtn);
 	}
-
-	window.addEventListener('message', e => {
-		if (e.data.type === 'openframe') {
-			monitor.style.display = 'flex';
-		}
-	});
-
-	exit.addEventListener('click', () => {
-		if (frame.src) {
-			monitor.style.display = 'flex';
-			frame.src = 'about:blank';
-		}
-	});
-
-	document.addEventListener('keyup', e => {
-		if (e.key == 'Escape') {
-			wrapper.style.display = 'none';
-		}
-	});
 });
