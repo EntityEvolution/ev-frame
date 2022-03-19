@@ -1,0 +1,12 @@
+[
+  {
+    "logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    "background": "rgba(255,255,255,0.8)",
+    "url": "https://www.google.com/"
+  },
+  {
+    "logo": "https://logodownload.org/wp-content/uploads/2014/04/bmw-logo-1.png",
+    "background": "rgba(255,255,255,0.8)",
+    "url": "https://atlasfw-docs.pages.dev/"
+  }
+]

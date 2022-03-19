@@ -1,0 +1,112 @@
+body {
+	overflow: hidden;
+}
+
+.tablet {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 80%;
+	z-index: -1;
+}
+
+.c-back {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 105vh;
+	height: 72%;
+	transform: translate(-50%, -49.8%);
+	background: rgba(0, 0, 0, 1);
+	z-index: -2;
+}
+
+.c-monitor {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	top: 50%;
+	left: 50%;
+	width: 98vh;
+	transform: translate(-50%, -50%);
+	height: 69%;
+	z-index: 30;
+	border-radius: 12px;
+	overflow-x: auto;
+}
+
+#frame {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 98vh;
+	transform: translate(-50%, -50%);
+	width: 102vh;
+	height: 70.8%;
+	z-index: 5;
+	border: none;
+	border-radius: 0.8vh;
+	background-color: black;
+}
+
+#exit {
+	position: absolute;
+	top: 87.5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 7vh;
+	height: 2vh;
+	border-radius: 0.6vh;
+	border: 0.4vh solid rgb(70, 70, 70);
+	z-index: 10;
+	background: rgba(255, 255, 255, 0.708);
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	height: 6px;
+	width: 0px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 12px;
+	background-color: rgb(56, 56, 56);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(109, 108, 108);
+	border-radius: 12px;
+}
+
+.c-cont {
+	position: relative;
+	height: 98%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.c-cont button {
+	margin-top: 12px;
+	border-radius: 1vh;
+	border: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 9vh;
+	height: 9vh;
+	cursor: pointer;
+	transition: transform 0.2s;
+
+	background-color: rgba(243, 243, 243, 0.9);
+}
+
+.c-cont button:hover {
+	transform: scale(1.05);
+}
+
+button > img {
+	width: 90%;
+}
