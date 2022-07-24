@@ -2,11 +2,11 @@ fx_version 'cerulean'
 game 'gta5'
 
 client_script 'nui.lua'
-ui_page 'ui/ui.html'
+ui_page 'ui/index.html'
 files {
-  'ui/ui.html',
+  'ui/index.html',
   'ui/style.css',
   'ui/script.js',
-  'ui/table.png',
+  'ui/tablet.png',
   'ui/apps.json',
 }

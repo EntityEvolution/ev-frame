@@ -12,8 +12,14 @@ window.addEventListener('load', async () => {
 	});
 
   document.addEventListener('keyup', e => {
-    if (e.key == 'Escape') {
-      wrapper.style.display = 'none';
+    if (e.key === 'Escape') {
+			fetchNui('closeframe').then((resp) => {
+				if (resp) {
+					monitor.style.display = 'flex';
+					frame.src = 'about:blank';
+					wrapper.style.display = 'none';
+				}
+			});
     }
   });
 
@@ -45,3 +51,18 @@ window.addEventListener('load', async () => {
 		appsList.appendChild(appBtn);
 	}
 });
+
+const fetchNui = async (cbName, data) => {
+	const options = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json; charset=UTF-8",
+		},
+		body: JSON.stringify(data),
+	};
+	const resourceName = window.GetParentResourceName
+			? GetParentResourceName()
+			: "ev-frame";
+	const resp = await fetch(`https://${resourceName}/${cbName}`, options);
+	return await resp.json();
+};
